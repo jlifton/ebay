@@ -8,18 +8,18 @@ Front-end: Angular 11
 
 Developed and run on Windows 10
 
-Installation and execution intructions:
-1. Download project
+Installation and execution instructions:
+1. Download project from: https://github.com/jlifton/ebay
 
 2. Backend install and run:
-	(a) in console window, cd to proj\backend
+	(a) in console window, cd to <installed-dir>\backend
 	(b) npm install
 	(c) npm run start:dev
 	
 	Node server will be running and listeniong on port 3000
 	
 3. Frontend	install and run:
-	(a) in console window, cd to proj\frontend\ebaySearchApp
+	(a) in console window, cd to <installed-dir>\frontend\ebaySearchApp
 	(b) npm install
 	(c) ng serve
 	
