@@ -1,0 +1,33 @@
+<div> Search topic:
+    <mat-form-field>
+        <input matInput type="text" [(ngModel)]="searchText" autofocus>
+    </mat-form-field>
+    <button style="margin: 6px;" mat-raised-button color="primary" (click)="onSearch()">Search</button>
+    <button style="margin: 6px;" mat-raised-button (click)="onClear()">Clear</button>
+</div>
+<br>
+
+<div *ngIf="status==='status_pending'">Searching...please wait</div>
+<div *ngIf="status==='status_success'">Results: ({{total}})</div>
+
+<br>
+<div *ngIf="status==='status_success'" class="tableholder">
+    <table mat-table [dataSource]="topicContentList" class="mat-elevation-z8">
+
+        <!-- Word column -->
+        <ng-container matColumnDef="word">
+            <th mat-header-cell *matHeaderCellDef> Word </th>
+            <td mat-cell *matCellDef="let element"> {{element.word}} </td>
+        </ng-container>
+
+        <!-- Rank Column -->
+        <ng-container matColumnDef="rank">
+            <th mat-header-cell *matHeaderCellDef> Rank </th>
+            <td mat-cell *matCellDef="let element"> {{formatRank(element.rank)}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
