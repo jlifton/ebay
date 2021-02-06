@@ -30,4 +30,12 @@ Installation and execution instructions:
 	http://localhost:4200   
 	
 	
+------------------------------------------
+
+To run unit tests:
+(a) Make sure node server is running: npm run start:dev	
+(b) in console window, cd to <installed-dir>\backend
+(c) npm test
+
+
 	
