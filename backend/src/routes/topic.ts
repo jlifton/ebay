@@ -11,6 +11,9 @@ export const topicGet = async (req: Express.Request, res: Express.Response) => {
         const searchItem: string = req.query.item; // req.body.item;
         const query1 = WIKI_SEARCH_1 + searchItem;
 
+        if (!searchItem || searchItem.trim() === '') {
+            res.status(400).send({ message: 'No search item' });
+        }
         // Using Axios for HTTP APIs 
         // Query list of topics fromwikipedia
         const resp1 = await axios.get(query1);
