@@ -34,12 +34,14 @@
 		"start": "cross-env NODE_ENV=production node .",
 		"start:dev": "cross-env NODE_ENV=development NODE_PATH=src nodemon -e ts -w src -x ts-node --inspect src/app.ts",
 		"start:docker": "docker run -d -p 3000:3000 kitanotori/express-typescript-example",
-		"test": "cross-env NODE_ENV=test mocha --recursive lib/test"
+		"test": "cross-env NODE_ENV=test mocha --recursive   src/test"
 	},
 	"dependencies": {
 		"@types/cors": "^2.8.9",
 		"axios": "^0.21.1",
 		"body-parser": "^1.18.2",
+		"chai-as-promised": "^7.1.1",
+		"chai-http": "^4.3.0",
 		"cors": "^2.8.5",
 		"cross-env": "^5.1.1",
 		"express": "^4.16.2",
@@ -59,6 +61,7 @@
 		"del-cli": "^1.1.0",
 		"mocha": "^4.0.0",
 		"nodemon": "^1.12.1",
+		"ts-mocha": "^8.0.0",
 		"ts-node": "^3.0.0",
 		"tslint": "^5.8.0",
 		"tslint-config-airbnb": "^5.4.0",
